@@ -7,7 +7,7 @@
 <meta name="description" content="Marketing, kandungan video & TikTok Live yang menjual. Pengalaman mengurus kempen 16 cawangan dan akaun TikTok berjumlah 300K+ pengikut. Jemput saya untuk sesi temuduga.">
 <meta property="og:title" content="Mohamad Firdaus — Creative Marketing Leader">
 <meta property="og:description" content="Kandungan yang menarik perhatian. Live yang menjual. Jenama yang berkembang.">
-<meta property="og:image" content="assets/firdaus.png">
+<meta property="og:image" content="assets/firdaus-suit.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -80,7 +80,7 @@ nav ul a:hover{color:var(--gold)}
 @keyframes pulse{70%{box-shadow:0 0 0 10px rgba(95,211,154,0)}100%{box-shadow:0 0 0 0 rgba(95,211,154,0)}}
 .hero-photo{position:relative;display:flex;justify-content:center;align-items:flex-end}
 .hero-photo::before{content:"";position:absolute;bottom:0;width:86%;aspect-ratio:1;border-radius:50% 50% 0 0;border:1px solid rgba(196,161,90,.4);transform:translateY(30%)}
-.hero-photo img{position:relative;width:min(400px,100%);filter:drop-shadow(0 30px 60px rgba(0,0,0,.45));-webkit-mask-image:linear-gradient(#000 88%,transparent);mask-image:linear-gradient(#000 88%,transparent)}
+.hero-photo img{position:relative;width:min(440px,100%);height:auto;filter:drop-shadow(0 30px 60px rgba(0,0,0,.45));-webkit-mask-image:linear-gradient(#000 88%,transparent);mask-image:linear-gradient(#000 88%,transparent)}
 .float{position:absolute;background:rgba(20,43,41,.85);backdrop-filter:blur(10px);border:1px solid var(--line-d);border-radius:14px;padding:12px 16px;font-size:.78rem;line-height:1.3;z-index:3;animation:bob 6s ease-in-out infinite}
 .float b{display:block;font-family:var(--serif);font-size:1.5rem;font-weight:500;color:var(--gold)}
 .float.f1{left:-4%;top:22%}
@@ -136,6 +136,18 @@ nav ul a:hover{color:var(--gold)}
 .cap i{font-style:normal;font-size:.7rem;letter-spacing:.2em;color:var(--gold);font-weight:600}
 .cap h3{font-size:1.3rem;margin:12px 0 10px}
 .cap p{color:var(--muted);font-size:.92rem}
+
+/* in action */
+.act{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:190px;gap:16px;margin-top:56px}
+.act figure{position:relative;border-radius:var(--r);overflow:hidden;background:var(--ink-2)}
+.act img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.act figure:hover img{transform:scale(1.04)}
+.act figcaption{position:absolute;inset:auto 0 0 0;padding:44px 20px 16px;background:linear-gradient(transparent,rgba(13,31,30,.88));font-size:.82rem;color:var(--ivory)}
+.act figcaption b{display:block;font-family:var(--serif);font-weight:500;font-size:1.1rem;color:var(--gold-2)}
+.a1{grid-column:span 4;grid-row:span 2}.a2{grid-column:span 2;grid-row:span 4}.a3{grid-column:span 2;grid-row:span 2}.a4{grid-column:span 2;grid-row:span 2}
+.a2 img{object-position:30% 30%}.a3 img{object-position:50% 20%}.a4 img{object-position:50% 25%}
+@media(max-width:760px){.act{grid-template-columns:1fr 1fr;grid-auto-rows:210px}.a1{grid-column:span 2;grid-row:span 1}.a2{grid-column:span 1;grid-row:span 2}.a3,.a4{grid-column:span 1;grid-row:span 1}}
+.avatar{width:112px;height:112px;border-radius:50%;object-fit:cover;object-position:50% 12%;margin:0 auto 28px;border:2px solid var(--gold);padding:4px;background:var(--ink)}
 
 /* portfolio */
 .gal{columns:3;column-gap:18px;margin-top:56px}
@@ -241,7 +253,7 @@ footer{background:var(--ink);color:rgba(246,242,234,.4);text-align:center;paddin
     <div class="hero-photo">
       <div class="float f1"><b>300K+</b>pengikut akaun<br>yang diurus</div>
       <div class="float f2"><b>16</b>cawangan dalam<br>satu kempen</div>
-      <img src="assets/firdaus.png" alt="Mohamad Firdaus bin Ismail" >
+      <img src="assets/firdaus-suit.png" alt="Mohamad Firdaus bin Ismail" width="702" height="892">
     </div>
   </div>
 </header>
@@ -321,6 +333,23 @@ footer{background:var(--ink);color:rgba(246,242,234,.4);text-align:center;paddin
       <div class="cap"><i>06</i><h3>Pengurusan Akaun Sosial</h3><p>Kandungan, video dan interaksi pengikut — bagi akaun TikTok jenama.</p></div>
     </div>
     <div class="tools rv"><span>CapCut</span><span>Filmora</span><span>Canva</span><span>Adobe Photoshop</span><span>TikTok Shop & Live</span><span>Facebook Live</span></div>
+  </div>
+</section>
+
+<!-- 5b. IN ACTION -->
+<section class="dark">
+  <div class="wrap">
+    <div class="rv">
+      <span class="eyebrow">Dalam aksi</span>
+      <h2>Di hadapan kamera, di lokasi, <em>dan di tengah pasukan.</em></h2>
+      <p class="lead">Dari studio live hingga lantai kedai, saya biasa bekerja di tempat jualan sebenar berlaku.</p>
+    </div>
+    <div class="act">
+      <figure class="a1 rv"><img loading="lazy" src="assets/aa-teguh.jpg" alt="Mohamad Firdaus berpakaian seragam di dalam pasar raya"><figcaption><b>Di lokasi</b>Pasar Raya AA Teguh · Marketing Officer</figcaption></figure>
+      <figure class="a2 rv"><img loading="lazy" src="assets/live-pazze.jpg" alt="Mohamad Firdaus menghoskan sesi live di studio Pazze"><figcaption><b>Sesi live</b>Studio Pazze Apparel</figcaption></figure>
+      <figure class="a3 rv"><img loading="lazy" src="assets/smile-batik.jpg" alt="Mohamad Firdaus tersenyum memakai baju batik"><figcaption><b>Mesra & yakin</b>Gaya penyampaian saya</figcaption></figure>
+      <figure class="a4 rv"><img loading="lazy" src="assets/sweatshirt.jpg" alt="Potret Mohamad Firdaus"><figcaption><b>Kreatif</b>Pemikir di belakang kandungan</figcaption></figure>
+    </div>
   </div>
 </section>
 
@@ -411,7 +440,7 @@ footer{background:var(--ink);color:rgba(246,242,234,.4);text-align:center;paddin
 <!-- 10. FINAL CTA -->
 <section id="hubungi" class="dark final">
   <div class="wrap">
-    <span class="eyebrow">Langkah seterusnya</span>
+    <img class="avatar" src="assets/avatar.jpg" alt="Mohamad Firdaus"><br><span class="eyebrow">Langkah seterusnya</span>
     <h2>Pasukan anda perlukan seseorang yang <em>boleh menjual</em> dan <em>mencipta.</em></h2>
     <p class="lead">Sembang 15 minit sudah cukup untuk anda tahu sama ada saya sesuai. Tiada komitmen.</p>
     <div class="hero-actions">
