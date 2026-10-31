@@ -68,7 +68,7 @@ nav ul a:hover{color:var(--gold)}
 
 /* hero */
 .hero{background:var(--ink);color:var(--ivory);min-height:100svh;padding:140px 0 0;position:relative;overflow:hidden;display:flex;align-items:flex-end}
-.hero::before{content:"";position:absolute;width:760px;height:760px;right:-160px;top:-120px;background:radial-gradient(circle,rgba(196,161,90,.2),transparent 62%);pointer-events:none}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(680px circle at var(--gx,72%) var(--gy,30%),rgba(196,161,90,.24),transparent 62%);pointer-events:none}
 .hero::after{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line-d) 1px,transparent 1px),linear-gradient(90deg,var(--line-d) 1px,transparent 1px);background-size:80px 80px;opacity:.25;mask-image:radial-gradient(ellipse at 70% 40%,#000,transparent 70%);-webkit-mask-image:radial-gradient(ellipse at 70% 40%,#000,transparent 70%);pointer-events:none}
 .hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:end;position:relative;z-index:2;width:min(1120px,100% - 40px)}
 .hero-copy{padding-bottom:90px;align-self:center}
@@ -136,6 +136,50 @@ nav ul a:hover{color:var(--gold)}
 .cap i{font-style:normal;font-size:.7rem;letter-spacing:.2em;color:var(--gold);font-weight:600}
 .cap h3{font-size:1.3rem;margin:12px 0 10px}
 .cap p{color:var(--muted);font-size:.92rem}
+
+/* progress + motion */
+#prog{position:fixed;top:0;left:0;height:2px;width:100%;background:linear-gradient(90deg,var(--gold),var(--gold-2));transform:scaleX(0);transform-origin:0 50%;z-index:90}
+.ln{display:block;overflow:hidden;padding-bottom:.14em;margin-bottom:-.14em}
+.ln>span{display:block;transform:translateY(110%);animation:up 1.1s cubic-bezier(.2,.7,.2,1) forwards}
+.ln:nth-child(2)>span{animation-delay:.14s}
+@keyframes up{to{transform:none}}
+.hero-copy .eyebrow,.hero-copy .lead,.hero-copy .hero-actions,.hero-copy .avail{opacity:0;animation:fade .9s .55s ease forwards}
+.hero-copy .hero-actions{animation-delay:.7s}.hero-copy .avail{animation-delay:.85s}
+@keyframes fade{to{opacity:1}}
+.hero-photo img,.float{transition:transform .25s ease-out}
+.spot{position:relative}
+.spot::after{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(196,161,90,.16),transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}
+.spot:hover::after{opacity:1}
+.btn{will-change:transform}
+.marq{background:var(--ink-2);border-top:1px solid var(--line-d);border-bottom:1px solid var(--line-d);overflow:hidden;padding:18px 0;color:rgba(246,242,234,.55);font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;white-space:nowrap}
+.marq div{display:inline-flex;gap:48px;padding-right:48px;animation:mq 38s linear infinite}
+.marq span::after{content:"✦";color:var(--gold);margin-left:48px}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* videos */
+.vh{margin-top:84px}
+.phones{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;margin-top:44px;perspective:1200px}
+@media(max-width:860px){.phones{grid-template-columns:1fr;max-width:300px;margin-inline:auto}}
+.vid{text-align:center;cursor:pointer}
+.phone{position:relative;aspect-ratio:9/16;border-radius:34px;padding:9px;background:linear-gradient(160deg,#2a2f2e,#0a1211);border:1px solid rgba(246,242,234,.18);box-shadow:0 40px 70px -30px rgba(0,0,0,.8);transition:transform .25s ease-out,box-shadow .3s;transform-style:preserve-3d}
+.vid:hover .phone{box-shadow:0 50px 90px -30px rgba(196,161,90,.35)}
+.phone .scr{position:absolute;inset:9px;border-radius:26px;overflow:hidden;background:#000}
+.phone video,.phone img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.phone video{opacity:0;transition:opacity .4s}
+.phone.live video{opacity:1}
+.phone::before{content:"";position:absolute;top:16px;left:50%;width:70px;height:18px;border-radius:12px;background:#000;transform:translateX(-50%);z-index:3}
+.play{position:absolute;left:50%;top:50%;width:66px;height:66px;margin:-33px 0 0 -33px;border-radius:50%;background:rgba(13,31,30,.55);backdrop-filter:blur(8px);border:1px solid rgba(246,242,234,.5);display:grid;place-items:center;z-index:2;transition:.3s}
+.play::after{content:"";border-left:16px solid var(--ivory);border-top:10px solid transparent;border-bottom:10px solid transparent;margin-left:5px}
+.vid:hover .play{background:var(--gold);transform:scale(1.1)}
+.vid:hover .play::after{border-left-color:var(--ink)}
+.dur{position:absolute;right:16px;bottom:16px;z-index:2;background:rgba(0,0,0,.6);border-radius:100px;padding:3px 10px;font-size:.72rem}
+.vid h3{font-size:1.25rem;margin:22px 0 4px}
+.vid p{font-size:.85rem;color:rgba(246,242,234,.6)}
+.vm{position:fixed;inset:0;background:rgba(6,14,13,.95);display:none;align-items:center;justify-content:center;z-index:120;padding:20px}
+.vm.on{display:flex}
+.vm video{height:min(88vh,900px);max-width:100%;aspect-ratio:9/16;border-radius:18px;background:#000;box-shadow:0 0 0 1px var(--line-d),0 40px 100px rgba(0,0,0,.6)}
+.vx{position:absolute;top:18px;right:18px;width:46px;height:46px;border-radius:50%;border:1px solid var(--line-d);background:transparent;color:var(--ivory);font-size:1.1rem;cursor:pointer}
+.vx:hover{border-color:var(--gold);color:var(--gold)}
 
 /* in action */
 .act{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:190px;gap:16px;margin-top:56px}
@@ -218,11 +262,12 @@ footer{background:var(--ink);color:rgba(246,242,234,.4);text-align:center;paddin
 /* reveal */
 .rv{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
 .rv.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.float,.dot{animation:none}html{scroll-behavior:auto}}
+@media(prefers-reduced-motion:reduce){.ln>span{transform:none;animation:none}.hero-copy>*{opacity:1!important;animation:none!important}.marq div{animation:none}#prog{display:none}.rv{opacity:1;transform:none;transition:none}.float,.dot{animation:none}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
 
+<div id="prog"></div>
 <nav id="nav">
   <div class="wrap">
     <a href="#" class="logo">Firdaus<span>.</span></a>
@@ -242,7 +287,7 @@ footer{background:var(--ink);color:rgba(246,242,234,.4);text-align:center;paddin
   <div class="wrap">
     <div class="hero-copy">
       <span class="eyebrow">Creative Marketing Leader</span>
-      <h1>Kandungan yang <em>menarik perhatian.</em> Live yang <em>menjual.</em></h1>
+      <h1><span class="ln"><span>Kandungan yang <em>menarik perhatian.</em></span></span><span class="ln"><span>Live yang <em>menjual.</em></span></span></h1>
       <p class="lead">Saya Mohamad Firdaus — pemasar kreatif yang menggabungkan video, reka bentuk dan TikTok Live untuk menukar penonton kepada pelanggan. Dibuktikan merentasi runcit, fesyen dan perabot.</p>
       <div class="hero-actions">
         <a class="btn btn-gold" href="#hubungi">Atur Sesi Temuduga <span class="arrow">→</span></a>
@@ -258,13 +303,15 @@ footer{background:var(--ink);color:rgba(246,242,234,.4);text-align:center;paddin
   </div>
 </header>
 
+<div class="marq" aria-hidden="true"><div><span>Candia Malaysia</span><span>Pasar Raya AA Teguh</span><span>Pazze Apparel</span><span>JKEE Furniture</span><span>Halim Global</span><span>TikTok Live</span><span>Video Pendek</span><span>Reka Bentuk Grafik</span><span>Candia Malaysia</span><span>Pasar Raya AA Teguh</span><span>Pazze Apparel</span><span>JKEE Furniture</span><span>Halim Global</span><span>TikTok Live</span><span>Video Pendek</span><span>Reka Bentuk Grafik</span></div></div>
+
 <!-- 2. PROOF BAR -->
 <div class="proof">
   <div class="wrap">
-    <div class="stat"><b data-count="3" data-suffix="+">0</b><span>tahun live & kandungan jualan</span></div>
-    <div class="stat"><b data-count="16">0</b><span>cawangan dalam kempen yang dirancang</span></div>
-    <div class="stat"><b data-count="300" data-suffix="K+">0</b><span>jumlah pengikut 3 akaun TikTok</span></div>
-    <div class="stat"><b data-count="6" data-suffix="">0</b><span>jenama & syarikat dalam 3 tahun</span></div>
+    <div class="stat"><b data-count="3" data-suffix="+">3+</b><span>tahun live & kandungan jualan</span></div>
+    <div class="stat"><b data-count="16">16</b><span>cawangan dalam kempen yang dirancang</span></div>
+    <div class="stat"><b data-count="300" data-suffix="K+">300K+</b><span>jumlah pengikut 3 akaun TikTok</span></div>
+    <div class="stat"><b data-count="6">6</b><span>jenama & syarikat dalam 3 tahun</span></div>
   </div>
 </div>
 
@@ -277,10 +324,10 @@ footer{background:var(--ink);color:rgba(246,242,234,.4);text-align:center;paddin
       <p class="lead">Kebanyakan pasukan marketing ada yang pandai bercakap, ada yang pandai mereka, ada yang pandai mengedit. Saya melakukan ketiga-tiganya — dari idea hingga jualan.</p>
     </div>
     <div class="cards">
-      <div class="card rv"><span class="n">01</span><h3>Menjual di hadapan kamera</h3><p>Host live TikTok untuk fesyen lelaki & perabot. Gaya mesra yang menahan penonton dan mendorong pembelian.</p></div>
-      <div class="card rv"><span class="n">02</span><h3>Mencipta di belakang kamera</h3><p>Merancang kandungan, menulis penerangan produk, mengedit video dan mereka poster — tanpa perlu bergantung pada pasukan lain.</p></div>
-      <div class="card rv"><span class="n">03</span><h3>Memimpin kempen skala besar</h3><p>Menyelaras kempen jualan 16 cawangan di Kedah & Pulau Pinang serta membina identiti jenama syarikat.</p></div>
-      <div class="card rv"><span class="n">04</span><h3>Memahami orang & operasi</h3><p>Pengalaman HR — pengambilan, latihan dan perancangan tenaga kerja — membuatkan saya mudah memimpin dan diterima pasukan.</p></div>
+      <div class="spot card rv"><span class="n">01</span><h3>Menjual di hadapan kamera</h3><p>Host live TikTok untuk fesyen lelaki & perabot. Gaya mesra yang menahan penonton dan mendorong pembelian.</p></div>
+      <div class="spot card rv"><span class="n">02</span><h3>Mencipta di belakang kamera</h3><p>Merancang kandungan, menulis penerangan produk, mengedit video dan mereka poster — tanpa perlu bergantung pada pasukan lain.</p></div>
+      <div class="spot card rv"><span class="n">03</span><h3>Memimpin kempen skala besar</h3><p>Menyelaras kempen jualan 16 cawangan di Kedah & Pulau Pinang serta membina identiti jenama syarikat.</p></div>
+      <div class="spot card rv"><span class="n">04</span><h3>Memahami orang & operasi</h3><p>Pengalaman HR — pengambilan, latihan dan perancangan tenaga kerja — membuatkan saya mudah memimpin dan diterima pasukan.</p></div>
     </div>
   </div>
 </section>
@@ -294,26 +341,37 @@ footer{background:var(--ink);color:rgba(246,242,234,.4);text-align:center;paddin
       <p class="lead">Bukan teori. Ini platform sebenar dengan penonton sebenar — dan saya berada di belakang kandungan serta sesi live mereka.</p>
     </div>
     <div class="accts">
-      <article class="acct rv">
+      <article class="spot acct rv">
         <small>Fesyen lelaki</small>
         <h3>Pazze Apparel</h3>
         <div class="role">Host Live & Content Creator · 2023–2025</div>
-        <div class="nums"><div><b>167.3K</b><span>pengikut</span></div><div><b>221.2K</b><span>likes</span></div></div>
+        <div class="nums"><div><b data-count="167.3" data-dec="1" data-suffix="K">167.3K</b><span>pengikut</span></div><div><b data-count="221.2" data-dec="1" data-suffix="K">221.2K</b><span>likes</span></div></div>
       </article>
-      <article class="acct rv">
+      <article class="spot acct rv">
         <small>Perabot</small>
         <h3>JKEE Furniture</h3>
         <div class="role">Host Live & Content Planning · 2024</div>
-        <div class="nums"><div><b>130.4K</b><span>pengikut</span></div><div><b>78.2K</b><span>likes</span></div></div>
+        <div class="nums"><div><b data-count="130.4" data-dec="1" data-suffix="K">130.4K</b><span>pengikut</span></div><div><b data-count="78.2" data-dec="1" data-suffix="K">78.2K</b><span>likes</span></div></div>
       </article>
-      <article class="acct rv">
+      <article class="spot acct rv">
         <small>Runcit & borong</small>
         <h3>Pasar Raya AA Teguh</h3>
         <div class="role">Marketing Officer · 2025–2026</div>
-        <div class="nums"><div><b>5.8K</b><span>pengikut</span></div><div><b>31.3K</b><span>likes</span></div></div>
+        <div class="nums"><div><b data-count="5.8" data-dec="1" data-suffix="K">5.8K</b><span>pengikut</span></div><div><b data-count="31.3" data-dec="1" data-suffix="K">31.3K</b><span>likes</span></div></div>
       </article>
     </div>
-    <p class="note">* Angka ialah statistik semasa akaun jenama yang pernah saya akses & kendalikan kandungan/live, seperti dalam resume. Ia bukan dakwaan bahawa keseluruhan pertumbuhan adalah hasil kerja individu.</p>
+    
+    <div class="vh rv">
+      <span class="eyebrow">Video yang saya hasilkan</span>
+      <h2>Tekan untuk <em>tonton</em> hasilnya.</h2>
+      <p class="lead">Tiga video sebenar untuk tiga jenama berbeza. Hover untuk pratonton, klik untuk tonton penuh dengan bunyi.</p>
+    </div>
+    <div class="phones">
+      <article class="vid rv" data-src="assets/video/pazze.mp4"><div class="phone"><div class="scr"><img src="assets/video/pazze.jpg" alt="Video Pazze Apparel" loading="lazy"><video muted loop playsinline preload="none" data-src="assets/video/pazze.mp4"></video></div><span class="play"></span><span class="dur">1:01</span></div><h3>Pazze Apparel</h3><p>Penerangan produk fesyen lelaki</p></article>
+      <article class="vid rv" data-src="assets/video/jkee.mp4"><div class="phone"><div class="scr"><img src="assets/video/jkee.jpg" alt="Video JKEE Furniture" loading="lazy"><video muted loop playsinline preload="none" data-src="assets/video/jkee.mp4"></video></div><span class="play"></span><span class="dur">1:34</span></div><h3>JKEE Furniture</h3><p>Demo produk perabot</p></article>
+      <article class="vid rv" data-src="assets/video/aateguh.mp4"><div class="phone"><div class="scr"><img src="assets/video/aateguh.jpg" alt="Video Pasar Raya AA Teguh" loading="lazy"><video muted loop playsinline preload="none" data-src="assets/video/aateguh.mp4"></video></div><span class="play"></span><span class="dur">1:59</span></div><h3>Pasar Raya AA Teguh</h3><p>Video di lokasi pasar raya</p></article>
+    </div>
+    <p class="note" style="margin-top:56px">* Angka ialah statistik semasa akaun jenama yang pernah saya akses & kendalikan kandungan/live, seperti dalam resume. Ia bukan dakwaan bahawa keseluruhan pertumbuhan adalah hasil kerja individu.</p>
   </div>
 </section>
 
@@ -325,12 +383,12 @@ footer{background:var(--ink);color:rgba(246,242,234,.4);text-align:center;paddin
       <h2>Saya bukan sekadar mengisi jawatan. Saya <em>menutup jurang.</em></h2>
     </div>
     <div class="caps rv">
-      <div class="cap"><i>01</i><h3>TikTok & Facebook Live</h3><p>Hos, skrip, interaksi penonton dan penukaran jualan masa nyata.</p></div>
-      <div class="cap"><i>02</i><h3>Penerbitan Video</h3><p>Penggambaran dan suntingan video pendek untuk jualan dan jenama — CapCut & Filmora.</p></div>
-      <div class="cap"><i>03</i><h3>Reka Bentuk Grafik</h3><p>Poster, promosi dan visual media sosial dengan Canva & Photoshop.</p></div>
-      <div class="cap"><i>04</i><h3>Perancangan Kempen</h3><p>Strategi jualan berbilang cawangan, jadual kandungan dan promosi bermusim.</p></div>
-      <div class="cap"><i>05</i><h3>Identiti & Profil Jenama</h3><p>Membangunkan dan menyelaraskan imej jenama supaya konsisten di semua saluran.</p></div>
-      <div class="cap"><i>06</i><h3>Pengurusan Akaun Sosial</h3><p>Kandungan, video dan interaksi pengikut — bagi akaun TikTok jenama.</p></div>
+      <div class="cap spot"><i>01</i><h3>TikTok & Facebook Live</h3><p>Hos, skrip, interaksi penonton dan penukaran jualan masa nyata.</p></div>
+      <div class="cap spot"><i>02</i><h3>Penerbitan Video</h3><p>Penggambaran dan suntingan video pendek untuk jualan dan jenama — CapCut & Filmora.</p></div>
+      <div class="cap spot"><i>03</i><h3>Reka Bentuk Grafik</h3><p>Poster, promosi dan visual media sosial dengan Canva & Photoshop.</p></div>
+      <div class="cap spot"><i>04</i><h3>Perancangan Kempen</h3><p>Strategi jualan berbilang cawangan, jadual kandungan dan promosi bermusim.</p></div>
+      <div class="cap spot"><i>05</i><h3>Identiti & Profil Jenama</h3><p>Membangunkan dan menyelaraskan imej jenama supaya konsisten di semua saluran.</p></div>
+      <div class="cap spot"><i>06</i><h3>Pengurusan Akaun Sosial</h3><p>Kandungan, video dan interaksi pengikut — bagi akaun TikTok jenama.</p></div>
     </div>
     <div class="tools rv"><span>CapCut</span><span>Filmora</span><span>Canva</span><span>Adobe Photoshop</span><span>TikTok Shop & Live</span><span>Facebook Live</span></div>
   </div>
@@ -416,9 +474,9 @@ footer{background:var(--ink);color:rgba(246,242,234,.4);text-align:center;paddin
       <p class="lead">Majikan terbaik tidak membeli CV, mereka membeli hasil. Inilah bagaimana saya akan memberi impak di organisasi anda.</p>
     </div>
     <div class="plan">
-      <div class="step rv"><div class="d">30<small>hari</small></div><h3>Fahami & Audit</h3><ul><li>Pelajari produk, pelanggan dan jenama anda</li><li>Audit kandungan, akaun sosial & sesi live sedia ada</li><li>Kenal pasti 3 peluang pantas (quick wins)</li></ul></div>
-      <div class="step rv"><div class="d">60<small>hari</small></div><h3>Bina & Lancar</h3><ul><li>Jadual kandungan bulanan & format video berprestasi</li><li>Struktur sesi live: skrip, tawaran, jadual</li><li>Visual jenama yang konsisten di semua saluran</li></ul></div>
-      <div class="step rv"><div class="d">90<small>hari</small></div><h3>Ukur & Skala</h3><ul><li>Laporan prestasi: capaian, penglibatan, jualan</li><li>Gandakan apa yang berkesan, buang yang tidak</li><li>Dokumentasi proses supaya pasukan boleh meniru</li></ul></div>
+      <div class="spot step rv"><div class="d">30<small>hari</small></div><h3>Fahami & Audit</h3><ul><li>Pelajari produk, pelanggan dan jenama anda</li><li>Audit kandungan, akaun sosial & sesi live sedia ada</li><li>Kenal pasti 3 peluang pantas (quick wins)</li></ul></div>
+      <div class="spot step rv"><div class="d">60<small>hari</small></div><h3>Bina & Lancar</h3><ul><li>Jadual kandungan bulanan & format video berprestasi</li><li>Struktur sesi live: skrip, tawaran, jadual</li><li>Visual jenama yang konsisten di semua saluran</li></ul></div>
+      <div class="spot step rv"><div class="d">90<small>hari</small></div><h3>Ukur & Skala</h3><ul><li>Laporan prestasi: capaian, penglibatan, jualan</li><li>Gandakan apa yang berkesan, buang yang tidak</li><li>Dokumentasi proses supaya pasukan boleh meniru</li></ul></div>
     </div>
   </div>
 </section>
@@ -457,6 +515,7 @@ footer{background:var(--ink);color:rgba(246,242,234,.4);text-align:center;paddin
 <footer>© 2026 Mohamad Firdaus bin Ismail · Creative Leader | Graphic Designer | Photographer & Videographer | Content Creator</footer>
 
 <a class="btn btn-gold sticky" id="sticky" href="#hubungi">Jemput Saya untuk Temuduga →</a>
+<div class="vm" id="vm"><button class="vx" id="vx" aria-label="Tutup video">✕</button><video id="vmv" controls playsinline></video></div>
 <div class="lb" id="lb"><img alt=""></div>
 
 <script>
@@ -468,15 +527,45 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.targ
 document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%4)*70+'ms';io.observe(el)});
 // counters
 const co=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;co.unobserve(e.target);
-  const el=e.target,to=+el.dataset.count,suf=el.dataset.suffix||'',t0=performance.now();
-  (function f(t){const p=Math.min((t-t0)/1400,1),v=Math.round(to*(1-Math.pow(1-p,3)));el.textContent=v+(p===1?suf:'');if(p<1)requestAnimationFrame(f)})(t0);
+  const el=e.target,to=+el.dataset.count,dec=+(el.dataset.dec||0),suf=el.dataset.suffix||'',t0=performance.now();
+  (function f(t){const p=Math.min((t-t0)/1500,1),v=to*(1-Math.pow(1-p,3));el.textContent=v.toFixed(dec)+suf;if(p<1)requestAnimationFrame(f)})(t0);
 }),{threshold:.6});
-document.querySelectorAll('[data-count]').forEach(el=>co.observe(el));
+const RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
+if(!RM)document.querySelectorAll('[data-count]').forEach(el=>{el.textContent='0'+(el.dataset.suffix||'').replace(/.*/,'');co.observe(el)});
 // lightbox
 const lb=document.getElementById('lb'),lbi=lb.querySelector('img');
 document.querySelectorAll('#gal img').forEach(im=>im.addEventListener('click',()=>{lbi.src=im.src;lbi.alt=im.alt;lb.classList.add('on')}));
 lb.addEventListener('click',()=>lb.classList.remove('on'));
 addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on')});
+
+// scroll progress
+const prog=document.getElementById('prog');
+addEventListener('scroll',()=>{const h=document.documentElement;prog.style.transform='scaleX('+(scrollY/(h.scrollHeight-innerHeight||1))+')'},{passive:true});
+// spotlight on cards
+document.querySelectorAll('.spot').forEach(el=>el.addEventListener('pointermove',e=>{const r=el.getBoundingClientRect();el.style.setProperty('--mx',(e.clientX-r.left)+'px');el.style.setProperty('--my',(e.clientY-r.top)+'px')}));
+if(!RM&&matchMedia('(hover:hover)').matches){
+  // hero glow + parallax
+  const hero=document.querySelector('.hero'),hp=document.querySelector('.hero-photo img'),fl=document.querySelectorAll('.float');
+  hero.addEventListener('pointermove',e=>{const r=hero.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
+    hero.style.setProperty('--gx',x*100+'%');hero.style.setProperty('--gy',y*100+'%');
+    hp.style.transform='translate('+(x-.5)*-16+'px,'+(y-.5)*-10+'px)';
+    fl.forEach((f,i)=>f.style.translate=(x-.5)*(i?22:-22)+'px '+(y-.5)*14+'px')});
+  // magnetic buttons
+  document.querySelectorAll('.btn-gold,.btn-ghost').forEach(b=>{b.addEventListener('pointermove',e=>{const r=b.getBoundingClientRect();b.style.transform='translate('+(e.clientX-r.left-r.width/2)*.18+'px,'+(e.clientY-r.top-r.height/2)*.3+'px)'});b.addEventListener('pointerleave',()=>b.style.transform='')});
+  // phone tilt + hover preview
+  document.querySelectorAll('.vid').forEach(v=>{const ph=v.querySelector('.phone'),vd=v.querySelector('video');
+    ph.addEventListener('pointermove',e=>{const r=ph.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;ph.style.transform='rotateY('+x*14+'deg) rotateX('+-y*14+'deg) translateZ(10px)'});
+    v.addEventListener('pointerenter',()=>{if(!vd.src)vd.src=vd.dataset.src;vd.play().then(()=>ph.classList.add('live')).catch(()=>{})});
+    v.addEventListener('pointerleave',()=>{ph.style.transform='';ph.classList.remove('live');vd.pause();vd.currentTime=0});
+  });
+}
+// video modal
+const vm=document.getElementById('vm'),vmv=document.getElementById('vmv');
+const closeV=()=>{vm.classList.remove('on');vmv.pause();vmv.removeAttribute('src');vmv.load()};
+document.querySelectorAll('.vid').forEach(v=>v.addEventListener('click',()=>{vmv.src=v.dataset.src;vm.classList.add('on');vmv.play().catch(()=>{})}));
+document.getElementById('vx').addEventListener('click',closeV);
+vm.addEventListener('click',e=>{if(e.target===vm)closeV()});
+addEventListener('keydown',e=>{if(e.key==='Escape')closeV()});
 </script>
 </body>
 </html>
