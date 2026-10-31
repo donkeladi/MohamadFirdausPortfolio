@@ -232,6 +232,57 @@ nav ul a:hover{color:var(--gold)}
 @media(max-width:700px){.ainote{grid-template-columns:1fr}}
 .nb{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--ink);background:var(--gold);padding:8px 16px;border-radius:100px;justify-self:start}
 .ainote p{font-size:1rem}
+/* calculator */
+.calc{padding-bottom:clamp(72px,9vw,120px)}
+.cgrid{display:grid;grid-template-columns:1fr 1.05fr;gap:40px;margin-top:52px;align-items:start}
+@media(max-width:980px){.cgrid{grid-template-columns:1fr}}
+.cin{display:grid;gap:18px}
+.cg{border:1px solid var(--line-d);border-radius:var(--r);padding:26px 26px 22px;background:rgba(246,242,234,.03)}
+.cg h3{font-size:1.15rem;margin-bottom:16px;color:var(--gold-2)}
+.sl{margin-bottom:16px}
+.sl label{display:flex;justify-content:space-between;gap:16px;font-size:.88rem;margin-bottom:8px;color:rgba(246,242,234,.8)}
+.sl output{font-family:var(--serif);font-size:1.05rem;color:var(--ivory)}
+.sl input[type=range]{width:100%;accent-color:var(--gold);height:22px;cursor:pointer}
+.tg{display:flex;gap:10px;align-items:flex-start;font-size:.86rem;color:rgba(246,242,234,.75);cursor:pointer}
+.tg input{accent-color:var(--gold);margin-top:4px;width:16px;height:16px}
+.cg .sub{font-size:.84rem;color:rgba(246,242,234,.6)}
+.seg{display:flex;gap:8px;flex-wrap:wrap}
+.seg button{flex:1;min-width:92px;padding:11px 14px;border-radius:100px;border:1px solid var(--line-d);background:transparent;color:var(--ivory);font:600 .85rem var(--sans);cursor:pointer;transition:.25s}
+.seg button:hover{border-color:var(--gold)}
+.seg button.on{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+.seg button:focus-visible,.sl input:focus-visible,.tg input:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.cout{border:1px solid var(--gold);border-radius:var(--r);padding:30px 28px;background:linear-gradient(165deg,var(--ink-2),var(--ink));position:sticky;top:96px}
+@media(max-width:980px){.cout{position:static}}
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.col .k{display:block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(246,242,234,.55);margin-bottom:8px;min-height:2.2em}
+.col b{display:block;font-family:var(--serif);font-weight:500;font-size:clamp(1.55rem,3.2vw,2.3rem);letter-spacing:-.02em;line-height:1.1;font-variant-numeric:tabular-nums}
+.col.me b{color:var(--gold)}
+.col em{display:block;font-style:normal;font-size:.78rem;color:rgba(246,242,234,.5);margin:4px 0 14px;font-variant-numeric:tabular-nums}
+.bar{height:150px;display:flex;flex-direction:column-reverse;border-radius:12px;overflow:hidden;background:rgba(246,242,234,.05);position:relative}
+.bar i,.lg i{display:block;transition:height .7s cubic-bezier(.2,.7,.2,1)}
+.bar i{width:100%;height:0}
+.b1{background:var(--gold)}.b2{background:var(--gold-2);opacity:.65}.b3{background:#7d8f8b}
+.lg{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:14px;font-size:.74rem;color:rgba(246,242,234,.6)}
+.lg span{display:inline-flex;align-items:center;gap:7px}
+.lg i{width:10px;height:10px;border-radius:3px;display:inline-block}
+.save{margin-top:24px;padding-top:22px;border-top:1px solid var(--line-d);display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px}
+.sl1{font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(246,242,234,.6);width:100%}
+.save b{font-family:var(--serif);font-weight:500;font-size:clamp(2.2rem,5vw,3.4rem);letter-spacing:-.03em;color:var(--gold-2);font-variant-numeric:tabular-nums;line-height:1}
+.sl2{font-size:.95rem;background:var(--gold);color:var(--ink);padding:5px 14px;border-radius:100px;font-weight:600}
+.fine{margin-top:18px;font-size:.72rem;color:rgba(246,242,234,.45);line-height:1.6}
+.eqh{margin-top:84px}
+.eqh h3{font-size:clamp(1.5rem,3vw,2rem)}
+.eqs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+@media(max-width:860px){.eqs{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.eqs{grid-template-columns:1fr}}
+.eq{border:1px solid var(--line-d);border-radius:var(--r);padding:18px;background:rgba(246,242,234,.03);display:flex;flex-direction:column;gap:8px;transition:.3s}
+.eq:hover{border-color:var(--gold);transform:translateY(-4px)}
+.ph{aspect-ratio:4/3;border-radius:12px;background:#fff;display:grid;place-items:center;overflow:hidden;margin-bottom:6px}
+.ph img{width:100%;height:100%;object-fit:contain}
+.ph.ic{background:var(--ink-3);color:var(--gold);font-size:2.4rem}
+.eq h4{font-family:var(--serif);font-weight:500;font-size:1.1rem}
+.eq p{font-size:.82rem;color:rgba(246,242,234,.6)}
+.eq .pr{margin-top:auto;font-size:.78rem;font-weight:600;color:var(--gold-2)}
 /* in action */
 .act{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:190px;gap:16px;margin-top:56px}
 .act figure{position:relative;border-radius:var(--r);overflow:hidden;background:var(--ink-2)}
@@ -606,6 +657,57 @@ footer{background:var(--ink);color:rgba(246,242,234,.4);text-align:center;paddin
   </div>
 </section>
 
+<!-- 8b. CALCULATOR -->
+<section id="kos" class="dark calc">
+  <div class="wrap">
+    <div class="rv">
+      <span class="eyebrow" data-en="Cost simulator">Simulator kos</span>
+      <h2 data-en="Hire a team of three, &lt;em>or just me?&lt;/em>">Ambil 3 orang staf, <em>atau seorang saya?</em></h2>
+      <p class="lead" data-en="Adjust salaries to your organisation budget and see the difference. Default figures are market estimates, and I bring my own equipment and AI tools.">Laraskan gaji mengikut bajet organisasi anda dan lihat perbezaannya. Angka lalai ialah anggaran pasaran, dan peralatan serta alat AI saya sediakan sendiri.</p>
+    </div>
+    <div class="cgrid">
+      <div class="cin rv">
+        <div class="cg">
+          <h3 data-en="Team of three">Pasukan 3 orang</h3>
+        <div class="sl"><label for="s1"><span data-en="Videographer &amp; Editor">Videographer & Editor</span><output id="s1o">RM3,000</output></label><input type="range" id="s1" min="2000" max="5000" step="100" value="3000"></div>
+        <div class="sl"><label for="s2"><span data-en="Graphic Designer">Pereka Grafik</span><output id="s2o">RM2,800</output></label><input type="range" id="s2" min="2000" max="5000" step="100" value="2800"></div>
+        <div class="sl"><label for="s3"><span data-en="Live Host &amp; Content Manager">Host Live & Pengurus Kandungan</span><output id="s3o">RM2,800</output></label><input type="range" id="s3" min="2000" max="5000" step="100" value="2800"></div>
+        <label class="tg"><input type="checkbox" id="eq" checked><span data-en="The company must buy equipment &amp; AI subscriptions">Syarikat perlu membeli peralatan & langganan AI</span></label>
+        </div>
+        <div class="cg">
+          <h3 data-en="Mohamad Firdaus">Mohamad Firdaus</h3>
+        <div class="sl"><label for="sf"><span data-en="My expected salary">Gaji yang saya jangka</span><output id="sfo">RM4,000</output></label><input type="range" id="sf" min="3000" max="5000" step="100" value="4000"></div>
+          <p class="sub" data-en="Equipment, AI subscriptions and training modules are all mine, at no extra cost to the company.">Peralatan, langganan AI dan modul sudah saya sediakan sendiri, tanpa kos tambahan kepada syarikat.</p>
+        </div>
+        <div class="cg">
+          <h3 data-en="Period">Tempoh</h3>
+          <div class="seg" id="per" role="group" aria-label="Tempoh / Period"><button type="button" data-m="6" data-en="6 months">6 bulan</button><button type="button" data-m="12" data-en="12 months" class="on">12 bulan</button><button type="button" data-m="24" data-en="24 months">24 bulan</button></div>
+        </div>
+      </div>
+      <div class="cout rv" aria-live="polite">
+        <div class="cmp">
+          <div class="col"><span class="k" data-en="Team of three">Pasukan 3 orang</span><b id="tA">RM0</b><em id="mA">RM0</em><div class="bar" id="bA"><i class="b1"></i><i class="b2"></i><i class="b3"></i></div></div>
+          <div class="col me"><span class="k">Mohamad Firdaus</span><b id="tB">RM0</b><em id="mB">RM0</em><div class="bar" id="bB"><i class="b1"></i><i class="b2"></i><i class="b3"></i></div></div>
+        </div>
+        <div class="lg"><span><i class="b1"></i><span data-en="Salary">Gaji</span></span><span><i class="b2"></i><span data-en="Employer contributions">Caruman majikan</span></span><span><i class="b3"></i><span data-en="Equipment &amp; AI">Peralatan & AI</span></span></div>
+        <div class="save"><span class="sl1" data-en="You could save">Anda boleh jimat</span><b id="sv">RM0</b><span class="sl2" id="svp">0%</span></div>
+        <p class="fine" data-en="Estimates only. Employer contributions assume about 15% (EPF, SOCSO, EIS). Team equipment assumes one shared set of hardware plus three AI subscriptions and three training modules. Prices follow Malaysian retail listings and may change.">Anggaran sahaja. Caruman majikan dianggar kira-kira 15% (EPF, PERKESO, SIP). Peralatan pasukan dianggar satu set perkakasan dikongsi, tiga langganan AI dan tiga modul latihan. Harga mengikut senarai runcit Malaysia dan boleh berubah.</p>
+      </div>
+    </div>
+    <div class="eqh rv">
+      <h3 data-en="Equipment &amp; skills I bring myself">Peralatan & kemahiran yang saya bawa sendiri</h3>
+    </div>
+    <div class="eqs">
+      <article class="eq rv"><div class="ph"><img loading="lazy" src="assets/gimbal.jpg" alt="DJI Osmo Mobile 8"></div><h4>DJI Osmo Mobile 8</h4><p data-en="Phone gimbal for stable video">Gimbal telefon untuk video stabil</p><span class="pr" data-en="RM569">RM569</span></article>
+      <article class="eq rv"><div class="ph"><img loading="lazy" src="assets/drone.jpg" alt="DJI Neo 2"></div><h4>DJI Neo 2</h4><p data-en="Compact drone for aerial visuals">Dron kecil untuk visual udara</p><span class="pr" data-en="RM899">RM899</span></article>
+      <article class="eq rv"><div class="ph"><img loading="lazy" src="assets/tripod.jpg" alt="Ulanzi MT-44"></div><h4>Ulanzi MT-44</h4><p data-en="Extendable tripod and selfie stick">Tripod dan tongkat selfie boleh dilaras</p><span class="pr" data-en="about RM85">kira-kira RM85</span></article>
+      <article class="eq rv"><div class="ph ic">✦</div><h4>AI Pro (Claude / ChatGPT)</h4><p data-en="Pro subscription for posters, scripts and planning">Langganan versi Pro untuk poster, skrip dan perancangan</p><span class="pr" data-en="about RM90 a month">kira-kira RM90 sebulan</span></article>
+      <article class="eq rv"><div class="ph ic">▶</div><h4 data-en="AI Video Module">Modul Video AI</h4><p data-en="A module on producing AI video">Modul cara menghasilkan video AI</p><span class="pr" data-en="RM85">RM85</span></article>
+      <article class="eq rv"><div class="ph ic">◎</div><h4 data-en="Research Skill">Kemahiran Penyelidikan</h4><p data-en="How I research the market and competitors in my own style">Cara saya menyelidik pasaran dan pesaing dengan gaya sendiri</p><span class="pr" data-en="Included at no charge">Termasuk, tanpa bayaran</span></article>
+    </div>
+  </div>
+</section>
+
 <!-- 9. FAQ / OBJECTIONS -->
 <section style="background:var(--lbg2)">
   <div class="wrap">
@@ -710,6 +812,45 @@ if(!RM)document.querySelectorAll('[data-count]').forEach(el=>{el.textContent='0'
       if(i>=txt.length){clearInterval(bp._tw);bp._tw=null;bp.classList.remove('typing');bp.textContent=txt;lit(steps.length)}},22);
   };
   new IntersectionObserver((es,o)=>{if(es[0].isIntersecting){o.disconnect();run()}},{threshold:.35}).observe(document.querySelector('.aiflow'));
+})();
+
+// ===== cost simulator =====
+(function(){
+  const g=id=>document.getElementById(id);
+  const s1=g('s1'),s2=g('s2'),s3=g('s3'),sf=g('sf'),eq=g('eq'),per=g('per');
+  if(!s1||!per)return;
+  const STAT=.1495,HW=569+899+85,AI_M=90,MOD=85;
+  const rm=v=>'RM'+Math.round(v).toLocaleString('en-US');
+  let months=12,first=true,tracked=false;
+  const cur={tA:0,tB:0,sv:0};
+  function tween(el,key,to){
+    if(RM){el.textContent=rm(to);cur[key]=to;return}
+    const from=cur[key],t0=performance.now();cur[key]=to;
+    (function f(t){const p=Math.min((t-t0)/600,1),v=from+(to-from)*(1-Math.pow(1-p,3));el.textContent=rm(v);if(p<1&&cur[key]===to)requestAnimationFrame(f)})(t0);
+  }
+  function calc(){
+    const salA=+s1.value+ +s2.value+ +s3.value,salB=+sf.value;
+    ['s1','s2','s3','sf'].forEach(id=>g(id+'o').textContent=rm(+g(id).value));
+    const eqOn=eq.checked;
+    const A={sal:salA*months,stat:salA*STAT*months,eq:eqOn?HW+3*AI_M*months+3*MOD:0};
+    const B={sal:salB*months,stat:salB*STAT*months,eq:0};
+    const tA=A.sal+A.stat+A.eq,tB=B.sal+B.stat+B.eq,max=Math.max(tA,tB)||1;
+    tween(g('tA'),'tA',tA);tween(g('tB'),'tB',tB);
+    g('mA').textContent=rm(tA/months)+' / '+(document.documentElement.dataset.lang==='en'?'month':'bulan');
+    g('mB').textContent=rm(tB/months)+' / '+(document.documentElement.dataset.lang==='en'?'month':'bulan');
+    [['bA',A],['bB',B]].forEach(([id,X])=>{const t=X.sal+X.stat+X.eq,hh=t/max*100,bar=g(id);
+      ['b1','b2','b3'].forEach((c,i)=>{const v=[X.sal,X.stat,X.eq][i];bar.querySelector('.'+c).style.height=(t?v/t*hh:0)+'%'})});
+    const sv=tA-tB;tween(g('sv'),'sv',Math.max(sv,0));
+    g('svp').textContent=(tA?Math.max(Math.round(sv/tA*100),0):0)+'%';
+    if(!first&&!tracked){tracked=true;if(typeof track==='function')track('kalkulator-guna')}
+    first=false;
+  }
+  [s1,s2,s3,sf,eq].forEach(el=>el.addEventListener('input',calc));
+  per.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;months=+b.dataset.m;per.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));calc()});
+  document.getElementById('lang').addEventListener('click',()=>setTimeout(calc,0));
+  calc();
+  // animate on first view
+  new IntersectionObserver((es,o)=>{if(es[0].isIntersecting){o.disconnect();cur.tA=cur.tB=cur.sv=0;first=true;calc()}},{threshold:.3}).observe(document.querySelector('.cout'));
 })();
 // lightbox
 const lb=document.getElementById('lb'),lbi=lb.querySelector('img');
