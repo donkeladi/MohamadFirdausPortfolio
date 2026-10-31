@@ -201,6 +201,37 @@ nav ul a:hover{color:var(--gold)}
 .vx{position:absolute;top:18px;right:18px;width:46px;height:46px;border-radius:50%;border:1px solid var(--line-d);background:transparent;color:var(--ivory);font-size:1.1rem;cursor:pointer}
 .vx:hover{border-color:var(--gold);color:var(--gold)}
 
+/* AI */
+.aigrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:52px}
+@media(max-width:860px){.aigrid{grid-template-columns:1fr}}
+.aic{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:30px 28px;transition:.3s}
+.aic:hover{transform:translateY(-4px);border-color:var(--gold)}
+.aik{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:var(--ink);color:var(--gold);margin-bottom:18px;font-size:1rem}
+.aic h3{font-size:1.3rem;margin-bottom:10px}
+.aic p{font-size:.92rem;color:var(--muted)}
+.aiflow{margin-top:64px;display:grid;grid-template-columns:.9fr 1.4fr;gap:40px;align-items:center}
+@media(max-width:980px){.aiflow{grid-template-columns:1fr}}
+.brief{background:var(--ink);color:var(--ivory);border-radius:var(--r);padding:0 0 22px;box-shadow:0 30px 60px -30px rgba(13,31,30,.6);overflow:hidden}
+.bh{display:flex;align-items:center;gap:7px;padding:14px 18px;border-bottom:1px solid var(--line-d);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.bh span{margin-right:auto}
+.bh i{width:9px;height:9px;border-radius:50%;background:rgba(246,242,234,.18)}
+.brief p{padding:18px 22px 0;font:400 .9rem/1.7 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:rgba(246,242,234,.88);min-height:11.5em}
+.brief p.typing::after{content:"";display:inline-block;width:7px;height:1em;background:var(--gold);margin-left:2px;vertical-align:-2px;animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+.flow{display:grid;gap:0;position:relative}
+.flow::before{content:"";position:absolute;left:19px;top:20px;bottom:20px;width:2px;background:var(--line)}
+.flow::after{content:"";position:absolute;left:19px;top:20px;width:2px;height:calc((100% - 40px)*var(--p,0));background:var(--gold);transition:height .6s}
+.fs{position:relative;padding:0 0 26px 60px;opacity:.4;transition:opacity .5s}
+.fs:last-child{padding-bottom:0}
+.fs.on{opacity:1}
+.fn{position:absolute;left:0;top:0;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--lbg2);border:2px solid var(--line);font-family:var(--serif);font-size:1.1rem;transition:.5s;z-index:1}
+.fs.on .fn{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+.fs h4{font-family:var(--serif);font-weight:500;font-size:1.2rem;padding-top:6px}
+.fs p{font-size:.9rem;color:var(--muted);margin-top:2px}
+.ainote{margin-top:56px;border:1px solid var(--gold);border-radius:var(--r);padding:28px 32px;display:grid;grid-template-columns:auto 1fr;gap:10px 28px;align-items:center;background:var(--card)}
+@media(max-width:700px){.ainote{grid-template-columns:1fr}}
+.nb{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--ink);background:var(--gold);padding:8px 16px;border-radius:100px;justify-self:start}
+.ainote p{font-size:1rem}
 /* in action */
 .act{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:190px;gap:16px;margin-top:56px}
 .act figure{position:relative;border-radius:var(--r);overflow:hidden;background:var(--ink-2)}
@@ -312,6 +343,7 @@ footer{background:var(--ink);color:rgba(246,242,234,.4);text-align:center;paddin
     <ul>
       <li><a href="#hasil" data-en="Results">Hasil</a></li>
       <li><a href="#nilai" data-en="Value">Nilai</a></li>
+      <li><a href="#ai">AI</a></li>
       <li><a href="#karya" data-en="Work">Karya</a></li>
       <li><a href="#perjalanan" data-en="Journey">Perjalanan</a></li>
       <li><a href="#pelan" data-en="90-Day Plan">Pelan 90 Hari</a></li>
@@ -328,7 +360,7 @@ footer{background:var(--ink);color:rgba(246,242,234,.4);text-align:center;paddin
 <header class="hero">
   <div class="wrap">
     <div class="hero-copy">
-      <span class="eyebrow">Creative Marketing Leader</span>
+      <span class="eyebrow">AI-Enhanced Creative Marketing Leader</span>
       <h1 data-en="&lt;span class=&quot;ln&quot;>&lt;span>Content that &lt;em>grabs attention.&lt;/em>&lt;/span>&lt;/span>&lt;span class=&quot;ln&quot;>&lt;span>Live sessions that &lt;em>sell.&lt;/em>&lt;/span>&lt;/span>"><span class="ln"><span>Kandungan yang <em>menarik perhatian.</em></span></span><span class="ln"><span>Live yang <em>menjual.</em></span></span></h1>
       <p class="lead" data-en="I am Mohamad Firdaus, a creative marketer who combines video, design and TikTok Live to turn viewers into customers. Proven across retail, fashion and furniture.">Saya Mohamad Firdaus, pemasar kreatif yang menggabungkan video, reka bentuk dan TikTok Live untuk menukar penonton kepada pelanggan. Dibuktikan merentasi runcit, fesyen dan perabot.</p>
       <div class="hero-actions">
@@ -438,7 +470,35 @@ footer{background:var(--ink);color:rgba(246,242,234,.4);text-align:center;paddin
       <div class="cap spot"><i>05</i><h3 data-en="Brand Identity &amp; Profile">Identiti & Profil Jenama</h3><p data-en="Building and aligning the brand image so it stays consistent across every channel.">Membangunkan dan menyelaraskan imej jenama supaya konsisten di semua saluran.</p></div>
       <div class="cap spot"><i>06</i><h3 data-en="Social Account Management">Pengurusan Akaun Sosial</h3><p data-en="Content, video and follower interaction for brand TikTok accounts.">Kandungan, video dan interaksi pengikut, bagi akaun TikTok jenama.</p></div>
     </div>
-    <div class="tools rv"><span>CapCut</span><span>Filmora</span><span>Canva</span><span>Adobe Photoshop</span><span>TikTok Shop & Live</span><span>Facebook Live</span></div>
+    <div class="tools rv"><span>CapCut</span><span>Filmora</span><span>Canva</span><span>Adobe Photoshop</span><span>TikTok Shop & Live</span><span>Facebook Live</span><span data-en="AI for posters, video & planning">AI untuk poster, video & perancangan</span></div>
+  </div>
+</section>
+
+<!-- 5a. AI -->
+<section id="ai" style="background:var(--lbg2)">
+  <div class="wrap">
+    <div class="rv">
+      <span class="eyebrow">AI-Enhanced</span>
+      <h2 data-en="AI that works &lt;em>under my direction.&lt;/em>">AI yang bekerja <em>di bawah arahan saya.</em></h2>
+      <p class="lead" data-en="I use AI to produce posters, video and plans at the level of an experienced staff member. Every output is directed, reviewed and decided by me.">Saya menggunakan AI untuk menghasilkan poster, video dan perancangan pada tahap kerja staf berpengalaman. Setiap hasil dikawal, disemak dan diputuskan oleh saya.</p>
+    </div>
+    <div class="aigrid">
+      <article class="spot aic rv"><span class="aik">◐</span><h3 data-en="Poster &amp; Visuals">Poster & Visual</h3><p data-en="Clear visual direction, then reviewed and refined so it stays on-brand and reads like the work of an experienced designer.">Arahan visual yang jelas, kemudian disemak dan dikemas supaya kekal selari dengan jenama dan nampak seperti hasil pereka berpengalaman.</p></article>
+      <article class="spot aic rv"><span class="aik">▶</span><h3 data-en="Video">Video</h3><p data-en="AI-assisted scripts, storyboards and edits, with the storytelling and pacing set by me.">Skrip, papan cerita dan suntingan dibantu AI, dengan penceritaan dan rentak yang saya tentukan sendiri.</p></article>
+      <article class="spot aic rv"><span class="aik">◇</span><h3 data-en="Planning">Perancangan</h3><p data-en="Content calendars, campaign ideas and sales strategy generated from my brief, then filtered against the real conditions of the business.">Jadual kandungan, idea kempen dan strategi jualan dijana daripada brief saya, kemudian ditapis mengikut keadaan sebenar perniagaan.</p></article>
+    </div>
+    <div class="aiflow rv">
+      <div class="brief" id="brief"><div class="bh"><span data-en="Example of my brief">Contoh arahan saya</span><i></i><i></i><i></i></div><p id="briefT" data-en="Poster promo Hari Raya untuk kedai pakaian lelaki. Gaya premium dan minimalis, warna hijau tua dan emas, ruang kosong untuk harga, CTA WhatsApp di bawah. Elakkan teks bertindih dan wajah yang pelik.">Poster promo Hari Raya untuk kedai pakaian lelaki. Gaya premium dan minimalis, warna hijau tua dan emas, ruang kosong untuk harga, CTA WhatsApp di bawah. Elakkan teks bertindih dan wajah yang pelik.</p></div>
+      <div class="flow" id="flow">
+        <div class="fs"><span class="fn">1</span><h4 data-en="I write the brief">Saya tulis brief</h4><p data-en="I set the goal, audience, style and brand limits first.">Matlamat, khalayak, gaya dan had jenama saya tentukan dahulu.</p></div>
+        <div class="fs"><span class="fn">2</span><h4 data-en="AI produces a draft">AI menghasilkan draf</h4><p data-en="AI only generates from what I ask for.">AI hanya menjana berdasarkan apa yang saya minta.</p></div>
+        <div class="fs"><span class="fn">3</span><h4 data-en="I review &amp; correct">Saya semak & betulkan</h4><p data-en="I edit, remove what is off and add the human touch.">Saya edit, buang yang tidak tepat dan tambah sentuhan manusia.</p></div>
+        <div class="fs"><span class="fn">4</span><h4 data-en="I approve &amp; deliver">Saya lulus & hantar</h4><p data-en="Only work at the level of an experienced staff member reaches you.">Hanya hasil setaraf staf berpengalaman yang sampai kepada anda.</p></div>
+      </div>
+    </div>
+    <div class="ainote rv"><span class="nb" data-en="Important note">Nota penting</span>
+      <p data-en="Every AI output is fully controlled by me. AI only generates from my instructions, and each result is reviewed and refined to match the work of an experienced staff member, not output generated entirely by AI.">Semua hasil AI dikendalikan sepenuhnya oleh saya. AI hanya menjana berdasarkan arahan saya, dan setiap hasil disemak serta diperkemas supaya setaraf kerja staf berpengalaman, bukan hasil yang dijana sepenuhnya oleh AI.</p>
+    </div>
   </div>
 </section>
 
@@ -554,7 +614,7 @@ footer{background:var(--ink);color:rgba(246,242,234,.4);text-align:center;paddin
       <details><summary data-en="When can you start?">Bilakah anda boleh mula bekerja?</summary><p data-en="I currently work part time as a Host Live &amp; TikTok Admin at Candia Malaysia, so I am flexible to discuss a start date that suits your needs.">Saya kini bekerja separuh masa sebagai Host Live & Admin TikTok di Candia Malaysia, jadi saya fleksibel untuk berbincang tarikh mula yang sesuai dengan keperluan anda.</p></details>
       <details><summary data-en="Are you only a live host, or can you handle all of marketing?">Adakah anda hanya host live, atau boleh urus keseluruhan marketing?</summary><p data-en="Both. Besides live, I plan campaigns, produce video, design graphics and build brand identity, as in my Marketing Officer role covering 16 branches.">Kedua-duanya. Selain live, saya merancang kempen, menghasilkan video, mereka grafik dan membangunkan identiti jenama, seperti dalam peranan Marketing Officer yang merangkumi 16 cawangan.</p></details>
       <details><summary data-en="Can you work in a team and lead?">Boleh bekerja dalam pasukan dan memimpin?</summary><p data-en="Yes. I was Secretary of the Student Representative Council and Head of Security Exco at my college, I am now a JKM volunteer and PBMy member, and I have HR experience in hiring and training.">Ya. Saya pernah menjadi Setiausaha Majlis Perwakilan Pelajar dan Ketua Exco Keselamatan Kolej, kini sukarelawan JKM dan ahli PBMy, serta berpengalaman dalam HR, pengambilan dan latihan pekerja.</p></details>
-      <details><summary data-en="Do you use AI in your work?">Adakah anda menggunakan AI dalam kerja?</summary><p data-en="Yes. I use AI tools to speed up ideas, scripts and content production while keeping the human touch that makes a brand trusted.">Ya, saya menggunakan alat AI untuk mempercepatkan idea, skrip dan penghasilan kandungan, sambil mengekalkan sentuhan manusia yang membuatkan jenama dipercayai.</p></details>
+      <details><summary data-en="Do you use AI in your work?">Adakah anda menggunakan AI dalam kerja?</summary><p data-en="Yes, and it is one of my strengths. AI only generates from my instructions and every output is controlled and reviewed by me, so the final result matches the work of an experienced staff member.">Ya, dan itu salah satu kekuatan saya. AI hanya menjana berdasarkan arahan saya dan semua hasil dikendalikan serta disemak oleh saya, jadi hasil akhir setaraf kerja staf berpengalaman.</p></details>
       <details><summary data-en="Where are you based?">Di mana anda berpangkalan?</summary><p data-en="Sungai Petani, Kedah. Open to discuss on-site, hybrid or remote work depending on the role.">Sungai Petani, Kedah. Terbuka untuk bincang kerja di lokasi, hibrid atau jarak jauh bergantung peranan.</p></details>
     </div>
   </div>
@@ -611,7 +671,7 @@ const i18n=[...document.querySelectorAll('[data-en]')];i18n.forEach(el=>el.datas
 const hrefs=[...document.querySelectorAll('[data-en-href]')];hrefs.forEach(a=>a.dataset.msHref=a.getAttribute('href'));
 function setLang(l,silent){
   root.setAttribute('lang',l==='en'?'en':'ms');root.dataset.lang=l;
-  i18n.forEach(el=>{el.innerHTML=l==='en'?el.dataset.en:el.dataset.ms});
+  i18n.forEach(el=>{if(el._tw){clearInterval(el._tw);el._tw=null;el.classList.remove('typing')}el.innerHTML=l==='en'?el.dataset.en:el.dataset.ms});
   hrefs.forEach(a=>a.setAttribute('href',l==='en'?a.dataset.enHref:a.dataset.msHref));
   store.set('fd-lang',l);if(!silent)track('bahasa-'+l);
 }
@@ -634,6 +694,23 @@ const co=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return
 }),{threshold:.6});
 const RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
 if(!RM)document.querySelectorAll('[data-count]').forEach(el=>{el.textContent='0'+(el.dataset.suffix||'').replace(/.*/,'');co.observe(el)});
+
+// AI section: typing + stepper
+(function(){
+  const bp=document.getElementById('briefT'),fl=document.getElementById('flow');if(!bp||!fl)return;
+  const steps=[...fl.querySelectorAll('.fs')];
+  const lit=n=>{steps.forEach((s,i)=>s.classList.toggle('on',i<n));fl.style.setProperty('--p',n>1?(n-1)/(steps.length-1):0)};
+  let done=false;
+  const run=()=>{
+    if(done)return;done=true;
+    if(RM){lit(steps.length);return}
+    const txt=bp.textContent;bp.textContent='';bp.classList.add('typing');let i=0;
+    bp._tw=setInterval(()=>{i+=2;bp.textContent=txt.slice(0,i);
+      const n=Math.min(steps.length,1+Math.floor(i/txt.length*steps.length));lit(i>=txt.length?steps.length:Math.max(1,n-1));
+      if(i>=txt.length){clearInterval(bp._tw);bp._tw=null;bp.classList.remove('typing');bp.textContent=txt;lit(steps.length)}},22);
+  };
+  new IntersectionObserver((es,o)=>{if(es[0].isIntersecting){o.disconnect();run()}},{threshold:.35}).observe(document.querySelector('.aiflow'));
+})();
 // lightbox
 const lb=document.getElementById('lb'),lbi=lb.querySelector('img');
 document.querySelectorAll('#gal img').forEach(im=>im.addEventListener('click',()=>{lbi.src=im.src;lbi.alt=im.alt;lb.classList.add('on')}));
