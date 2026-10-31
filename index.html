@@ -270,6 +270,18 @@ nav ul a:hover{color:var(--gold)}
 .save b{font-family:var(--serif);font-weight:500;font-size:clamp(2.2rem,5vw,3.4rem);letter-spacing:-.03em;color:var(--gold-2);font-variant-numeric:tabular-nums;line-height:1}
 .sl2{font-size:.95rem;background:var(--gold);color:var(--ink);padding:5px 14px;border-radius:100px;font-weight:600}
 .fine{margin-top:18px;font-size:.72rem;color:rgba(246,242,234,.45);line-height:1.6}
+/* scope note */
+.scope{margin-top:36px;border:1px solid var(--line-d);border-radius:var(--r);padding:32px 30px;background:rgba(246,242,234,.03)}
+.sh h3{font-size:1.35rem}
+.sh p{margin-top:8px;font-size:.92rem;color:rgba(246,242,234,.65);max-width:620px}
+.sc2{display:grid;grid-template-columns:1fr 1fr;gap:34px;margin-top:26px}
+@media(max-width:860px){.sc2{grid-template-columns:1fr;gap:26px}}
+.st{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--gold)}
+.sb ul{list-style:none;display:grid;gap:11px;margin-top:14px}
+.sb li{position:relative;padding-left:26px;font-size:.9rem;color:rgba(246,242,234,.82)}
+.sb li::before{content:"→";position:absolute;left:0;color:rgba(246,242,234,.45)}
+.sb.own li::before{content:"✓";color:var(--gold);font-weight:700}
+.sf{margin-top:26px;padding-top:20px;border-top:1px solid var(--line-d);font-family:var(--serif);font-style:italic;font-size:1.05rem;color:var(--gold-2)}
 .eqh{margin-top:84px}
 .eqh h3{font-size:clamp(1.5rem,3vw,2rem)}
 .eqs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
@@ -693,6 +705,14 @@ footer{background:var(--ink);color:rgba(246,242,234,.4);text-align:center;paddin
         <div class="save"><span class="sl1" data-en="You could save">Anda boleh jimat</span><b id="sv">RM0</b><span class="sl2" id="svp">0%</span></div>
         <p class="fine" data-en="Estimates only. Employer contributions assume about 15% (EPF, SOCSO, EIS). Team equipment assumes one shared set of hardware plus three AI subscriptions and three training modules. Prices follow Malaysian retail listings and may change.">Anggaran sahaja. Caruman majikan dianggar kira-kira 15% (EPF, PERKESO, SIP). Peralatan pasukan dianggar satu set perkakasan dikongsi, tiga langganan AI dan tiga modul latihan. Harga mengikut senarai runcit Malaysia dan boleh berubah.</p>
       </div>
+    </div>
+    <div class="scope rv">
+      <div class="sh"><h3 data-en="An honest note on scope">Nota skop kerja yang jujur</h3><p data-en="One person is not a replacement for a full department. Here is a clear line so your expectations stay accurate.">Seorang saya tidak menggantikan sebuah jabatan penuh. Inilah garis yang jelas supaya jangkaan anda tepat.</p></div>
+      <div class="sc2">
+        <div class="sb own"><span class="st" data-en="I handle on my own">Saya kendalikan sendiri</span><ul><li><span data-en="Daily to monthly content planning and sales campaigns">Perancangan kandungan dan kempen jualan harian hingga bulanan</span></li><li><span data-en="Filming and editing short videos, including with AI assistance">Penggambaran dan suntingan video pendek, termasuk dengan bantuan AI</span></li><li><span data-en="Posters, social media visuals and basic brand identity">Poster, visual media sosial dan identiti jenama asas</span></li><li><span data-en="TikTok and Facebook live sessions, plus social account management">Sesi live TikTok dan Facebook, serta pengurusan akaun sosial</span></li><li><span data-en="Short reports and continuous improvement">Laporan ringkas dan penambahbaikan berterusan</span></li></ul></div>
+        <div class="sb"><span class="st" data-en="Where extra support helps">Bila sokongan tambahan membantu</span><ul><li><span data-en="Several large projects running at once, where I would discuss priorities and schedules clearly">Beberapa projek besar berjalan serentak, saya akan bincang keutamaan dan jadual dengan jelas</span></li><li><span data-en="Large-scale production such as cinematic ads, complex animation or a full crew">Penerbitan skala besar seperti iklan sinematik, animasi kompleks atau pasukan krew</span></li><li><span data-en="Highly specialised expertise such as large-scale paid ad management, where I would recommend a suitable partner">Kepakaran sangat khusus seperti pengurusan iklan berbayar berskala besar, saya akan cadangkan rakan kongsi yang sesuai</span></li></ul></div>
+      </div>
+      <p class="sf" data-en="I would rather agree the scope clearly at the start than promise more and deliver less.">Saya lebih suka bincang skop dengan jelas di awal daripada berjanji lebih dan menghasilkan kurang.</p>
     </div>
     <div class="eqh rv">
       <h3 data-en="Equipment &amp; skills I bring myself">Peralatan & kemahiran yang saya bawa sendiri</h3>
