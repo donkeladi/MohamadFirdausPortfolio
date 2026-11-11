@@ -295,6 +295,22 @@ nav ul a:hover{color:var(--gold)}
 .eq h4{font-family:var(--serif);font-weight:500;font-size:1.1rem}
 .eq p{font-size:.82rem;color:rgba(246,242,234,.6)}
 .eq .pr{margin-top:auto;font-size:.78rem;font-weight:600;color:var(--gold-2)}
+/* credentials */
+.cstats{display:grid;grid-template-columns:repeat(3,1fr);margin-top:48px;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--card)}
+@media(max-width:700px){.cstats{grid-template-columns:1fr}}
+.cst{padding:34px 26px;text-align:center;border-right:1px solid var(--line)}
+.cst:last-child{border:0}
+@media(max-width:700px){.cst{border-right:0;border-bottom:1px solid var(--line)}}
+.cst b{display:block;font-family:var(--serif);font-weight:500;font-size:clamp(2.6rem,5vw,3.8rem);letter-spacing:-.03em;line-height:1;color:var(--gold)}
+.cst span{display:block;margin-top:10px;font-size:.84rem;color:var(--muted)}
+.cred{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+@media(max-width:860px){.cred{grid-template-columns:1fr}}
+.crd{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:30px 28px;display:flex;flex-direction:column;gap:8px;transition:.3s}
+.crd:hover{transform:translateY(-4px);border-color:var(--gold)}
+.cm{display:grid;place-items:center;width:54px;height:54px;border-radius:50%;background:var(--ink);color:var(--gold);font-family:var(--serif);font-size:.95rem;margin-bottom:10px;letter-spacing:.02em}
+.crd h3{font-size:1.3rem}
+.cs{font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);font-weight:600;line-height:1.5}
+.crd p{font-size:.92rem;color:var(--muted);margin-top:4px}
 /* in action */
 .act{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:190px;gap:16px;margin-top:56px}
 .act figure{position:relative;border-radius:var(--r);overflow:hidden;background:var(--ink-2)}
@@ -464,7 +480,7 @@ footer{background:var(--ink);color:rgba(246,242,234,.4);text-align:center;paddin
       <div class="spot card rv"><span class="n">01</span><h3 data-en="Planning &amp; running campaigns">Merancang & melaksanakan kempen</h3><p data-en="Planning content and sales campaigns, from strategy to execution, across retail, fashion, furniture and footwear.">Merancang kandungan dan kempen jualan, dari strategi hingga pelaksanaan, merentasi runcit, fesyen, perabot dan kasut.</p></div>
       <div class="spot card rv"><span class="n">02</span><h3 data-en="Creating &amp; selling">Mencipta & menjual</h3><p data-en="Videos, posters and TikTok &amp; Facebook live sessions that grab attention and drive purchases, with convincing product descriptions.">Video, poster dan sesi live TikTok & Facebook yang menarik perhatian dan mendorong pembelian, bersama penerangan produk yang meyakinkan.</p></div>
       <div class="spot card rv"><span class="n">03</span><h3 data-en="Supporting management">Menyokong pengurusan</h3><p data-en="Documentation and SOPs, meeting minutes, post-mortems and quality checks, so every campaign is organised and improvable. My time as Secretary of the Student Representative Council trained me for this.">Dokumentasi dan SOP, minit mesyuarat, post-mortem dan semakan kualiti, supaya setiap kempen teratur dan boleh diperbaiki. Pengalaman sebagai Setiausaha Majlis Perwakilan Pelajar melatih saya dalam hal ini.</p></div>
-      <div class="spot card rv"><span class="n">04</span><h3 data-en="Technical mastery &amp; AI">Menguasai teknikal & AI</h3><p data-en="CapCut, Filmora, Canva, Photoshop and AI tools, backed by a diploma in database systems &amp; web applications.">CapCut, Filmora, Canva, Photoshop dan alat AI, dengan latar diploma sistem pangkalan data & aplikasi web.</p></div>
+      <div class="spot card rv"><span class="n">04</span><h3 data-en="Technical mastery &amp; AI">Menguasai teknikal & AI</h3><p data-en="CapCut, Filmora, Canva, Photoshop and AI tools, backed by a Malaysian Vocational Diploma (CGPA 3.59) in database systems &amp; web applications.">CapCut, Filmora, Canva, Photoshop dan alat AI, dengan latar Diploma Vokasional Malaysia (PNGK 3.59) dalam sistem pangkalan data & aplikasi web.</p></div>
     </div>
   </div>
 </section>
@@ -630,8 +646,30 @@ footer{background:var(--ink);color:rgba(246,242,234,.4);text-align:center;paddin
         <ul><li data-en="Promoted furniture to customers through live sessions and exhibition events.">Mempromosikan produk perabot kepada pelanggan melalui sesi live dan acara pameran.</li><li data-en="Planned content and marketing strategy that contributed to higher sales.">Merancang kandungan dan strategi pemasaran yang menyumbang kepada peningkatan jualan.</li><li data-en="Gave complete and convincing explanations of products and services.">Memberikan penerangan produk dan perkhidmatan yang lengkap dan meyakinkan.</li></ul></div>
       <div class="job rv"><div class="when" data-en="Sep 2023 – Jan 2024 · Full time">Sept 2023 – Jan 2024 · Sepenuh masa</div><h3>Human Resource</h3><div class="co">Halim Global Enterprise (M) Sdn. Bhd., Sungai Petani</div>
         <ul><li data-en="Monitored workforce needs and supported the company human resource planning.">Memantau keperluan tenaga kerja dan menyokong perancangan sumber manusia syarikat.</li><li data-en="Ran training programmes and employee skills development.">Mengendalikan program latihan dan pembangunan kemahiran pekerja.</li><li data-en="Managed the entire recruitment process for new employees.">Menguruskan keseluruhan proses pengambilan pekerja baharu.</li></ul></div>
-      <div class="job rv" style="padding-bottom:0"><div class="when">2016 – 2019</div><h3 data-en="Diploma in Database Management Systems &amp; Web Application Technology">Diploma Teknologi Sistem Pengurusan Pangkalan Data & Aplikasi Web</h3><div class="co">Kolej Vokasional Sungai Petani 1</div>
-        <ul><li data-en="Secretary, Student Representative Council 2018/2019">Setiausaha Majlis Perwakilan Pelajar 2018/2019</li><li data-en="Head of Security Exco, Residential College 2019">Ketua Exco Keselamatan Kolej Kediaman 2019</li></ul></div>
+      <div class="job rv" style="padding-bottom:0"><div class="when">2016 – 2020</div><h3 data-en="Diploma in Database Management Systems &amp; Web Application Technology">Diploma Teknologi Sistem Pengurusan Pangkalan Data & Aplikasi Web</h3><div class="co">Kolej Vokasional Sungai Petani 1</div>
+        <ul><li data-en="Overall CGPA 3.59 (Malaysian Vocational Diploma)">PNGK keseluruhan 3.59 (Diploma Vokasional Malaysia)</li><li data-en="Secretary, Student Representative Council 2018/2019">Setiausaha Majlis Perwakilan Pelajar 2018/2019</li><li data-en="Head of Security Exco, Residential College 2019">Ketua Exco Keselamatan Kolej Kediaman 2019</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- 7a. CREDENTIALS -->
+<section id="kelayakan">
+  <div class="wrap">
+    <div class="rv">
+      <span class="eyebrow" data-en="Qualifications &amp; certificates">Kelayakan & pensijilan</span>
+      <h2 data-en="A technical foundation that is &lt;em>officially certified.&lt;/em>">Asas teknikal yang <em>disahkan secara rasmi.</em></h2>
+      <p class="lead" data-en="Vocational education in ICT, plus an official appointment and workplace skills certification.">Pendidikan vokasional dalam bidang ICT, ditambah pelantikan rasmi dan pensijilan kemahiran kerja.</p>
+    </div>
+    <div class="cstats">
+      <div class="cst rv"><b data-count="3.59" data-dec="2">3.59</b><span data-en="overall CGPA, Malaysian Vocational Diploma">PNGK keseluruhan Diploma Vokasional Malaysia</span></div>
+      <div class="cst rv"><b data-count="3.80" data-dec="2">3.80</b><span data-en="vocational CGPA, Malaysian Vocational Certificate (ICT)">PNGK vokasional Sijil Vokasional Malaysia (ICT)</span></div>
+      <div class="cst rv"><b data-count="3">3</b><span data-en="SPM credits equivalent to the Vocational Certificate">kredit SPM setara dengan Sijil Vokasional Malaysia</span></div>
+    </div>
+    <div class="cred">
+      <article class="spot crd rv"><span class="cm">DVM</span><h3 data-en="Malaysian Vocational Diploma">Diploma Vokasional Malaysia</h3><span class="cs" data-en="Database Management Systems &amp; Web Application Technology · Sungai Petani 1 Vocational College · 2018 to 2020">Teknologi Sistem Pengurusan Pangkalan Data & Aplikasi Web · Kolej Vokasional Sungai Petani 1 · 2018 hingga 2020</span><p data-en="Completed with an overall CGPA of 3.59. Covers programming, databases, web and mobile development, e-commerce, a final year project and industrial training (OJT).">Pengajian tamat dengan PNGK keseluruhan 3.59. Merangkumi pengaturcaraan, pangkalan data, pembangunan web dan mudah alih, e-dagang, projek tahun akhir dan latihan industri (OJT).</p></article>
+      <article class="spot crd rv"><span class="cm">SVM</span><h3 data-en="Malaysian Vocational Certificate">Sijil Vokasional Malaysia</h3><span class="cs" data-en="ICT cluster · Sungai Petani 1 Vocational College · 2016 to 2017">Kluster ICT · Kolej Vokasional Sungai Petani 1 · 2016 hingga 2017</span><p data-en="Competent in all ICT modules. Vocational CGPA 3.80 and academic CGPA 3.01, equivalent to 3 credits in the Malaysian Certificate of Education (SPM).">Kompeten dalam semua modul ICT. PNGK vokasional 3.80 dan PNGK akademik 3.01, setara dengan 3 kredit Sijil Pelajaran Malaysia.</p></article>
+      <article class="spot crd rv"><span class="cm">MPP</span><h3 data-en="Secretary, Student Representative Council">Setiausaha Majlis Perwakilan Pelajar</h3><span class="cs" data-en="Letter of appointment · Sungai Petani 1 Vocational College · Session 2018/19">Watikah pelantikan · Kolej Vokasional Sungai Petani 1 · Sesi 2018/19</span><p data-en="Officially appointed as secretary, a role closely tied to records, minutes and documentation.">Dilantik secara rasmi sebagai setiausaha, jawatan yang berkait rapat dengan rekod, minit dan dokumentasi.</p></article>
+      <article class="spot crd rv"><span class="cm">ES</span><h3 data-en="Employability Skills Certificate of Achievement">Sijil Pencapaian Employability Skills</h3><span class="cs" data-en="Sungai Petani 1 Vocational College">Kolej Vokasional Sungai Petani 1</span><p data-en="Competent in workplace skills modules such as communication, information handling, information technology, managing work activities, handling problems and collaborating with colleagues.">Kompeten dalam modul kemahiran kerja seperti fungsi komunikasi, pengendalian maklumat, teknologi maklumat, mengurus aktiviti kerja, mengendalikan masalah dan bekerjasama dengan rakan sekerja.</p></article>
     </div>
   </div>
 </section>
